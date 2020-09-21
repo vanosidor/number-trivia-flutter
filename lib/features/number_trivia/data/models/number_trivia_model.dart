@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:meta/meta.dart';
 import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
 
