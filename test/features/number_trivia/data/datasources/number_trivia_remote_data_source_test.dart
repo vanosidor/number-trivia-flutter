@@ -60,7 +60,6 @@ void main() {
       final result = await remoteDataSource.getConcreteNumberTrivia(tNumber);
 
       //assert
-      // verify(remoteDataSource.getConcreteNumberTrivia(tNumber));
       expect(result, equals(tNumberTriviaModel));
     });
 
