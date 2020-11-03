@@ -31,7 +31,7 @@ dependencies:
   injectable: ^1.0.4
 
   # Bloc for state management
-  flutter_bloc: ^6.0.5
+  flutter_bloc: ^6.0.6
   # Value equality
   equatable: ^1.2.5
   # Functional programming thingies
