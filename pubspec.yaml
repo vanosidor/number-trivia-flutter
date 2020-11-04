@@ -50,6 +50,7 @@ dev_dependencies:
   injectable_generator: ^1.0.4
   build_runner: ^1.8.1
   mockito: ^4.1.0
+  bloc_test: ^7.1.0
 
 flutter:
 
