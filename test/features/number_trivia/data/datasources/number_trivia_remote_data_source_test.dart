@@ -10,6 +10,7 @@ import 'package:number_trivia/features/number_trivia/data/models/number_trivia_m
 
 import '../../../../fixtures/fixture_reader.dart';
 
+// TODO fix 'Content-Type': 'application/json'
 class MockHttpClient extends Mock implements http.Client {}
 
 void main() {
