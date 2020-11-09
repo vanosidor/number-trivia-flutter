@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:number_trivia/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
@@ -12,7 +11,7 @@ class NumberTriviaPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Number Trivia'),
         ),
-        body: buildBody(context));
+        body: SingleChildScrollView(child: buildBody(context)));
   }
 
   BlocProvider<NumberTriviaBloc> buildBody(BuildContext context) {
@@ -46,65 +45,5 @@ class NumberTriviaPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TriviaControls extends StatefulWidget {
-  const TriviaControls({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _TriviaControlsState createState() => _TriviaControlsState();
-}
-
-class _TriviaControlsState extends State<TriviaControls> {
-  String inputString;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Input a number',
-          ),
-          onChanged: (value) {
-            inputString = value;
-          },
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        Row(
-          children: [
-            Expanded(
-                child: RaisedButton(
-              child: Text('Search'),
-              color: Theme.of(context).accentColor,
-              onPressed: () => dispatchConcrete(),
-            )),
-            SizedBox(width: 10),
-            Expanded(
-                child: RaisedButton(
-              child: Text('Get random trivia'),
-              color: Theme.of(context).accentColor,
-              onPressed: () => dispatchRandom(),
-            )),
-          ],
-        )
-      ],
-    );
-  }
-
-  void dispatchConcrete() {
-    BlocProvider.of<NumberTriviaBloc>(context)
-        .add(GetTriviaForConcreteNumber(inputString));
-  }
-
-  void dispatchRandom() {
-    BlocProvider.of<NumberTriviaBloc>(context).add(GetTriviaForRandomNumber());
   }
 }
